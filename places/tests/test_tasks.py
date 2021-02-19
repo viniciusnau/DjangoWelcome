@@ -2,7 +2,7 @@ import datetime
 
 from django.utils import timezone
 
-from .tasks import update_place_date
+from places.tasks import update_place_date
 
 
 def test_should_update_place_date(client, place):

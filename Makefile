@@ -1,3 +1,15 @@
+.DEFAULT_GOAL := default_target
+# Default
+default_target: clean code-convention test
+# Code style
+code-convention:
+	flake8
+	pycodestyle
+# Remove useless files
+clean:
+	rm -fr .coverage
+	rm -fr .pytest_cache/
+
 #Database
 migrations:
 	./manage.py makemigrations
@@ -24,7 +36,7 @@ start:
 
 # Test
 test:
-	pytest --cov=.
+	PYTHON_PATH=. pytest --cov=.
 
 # Start celery
 celery-run:
