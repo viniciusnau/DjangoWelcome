@@ -11,3 +11,4 @@ pytest-mock
 pytest-sugar
 pytest-xdist
 requests-mock
+celery==5.0.5
